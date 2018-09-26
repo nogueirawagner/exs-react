@@ -2,6 +2,7 @@ import React from 'react';
 
 import Time from './Time';
 import Partida from './Partida';
+import FilmesContainer from './FilmesContainer';
 
 export default class PlacarContainer extends React.Component {
 
@@ -56,14 +57,14 @@ export default class PlacarContainer extends React.Component {
                 <div>{this.props.clima}</div>
                 <div>{this.props.tempo}</div>
                 <div style={{ clear: "both" }} ></div>
+                <div style={estilo}> <FilmesContainer /> </div>
             </div>
         );
     }
 }
 
 PlacarContainer.propTypes = {
-    clima: React.PropTypes.string,
-    tempo: React.PropTypes.number.IsRequired
+    clima: React.PropTypes.string
 }
 
 PlacarContainer.defaultProps = {

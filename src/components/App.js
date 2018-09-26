@@ -4,6 +4,7 @@ import Contador from './Contador';
 import Filme from './Filme';
 import PlacarContainer from './PlacarContainer';
 
+
 const dados = {
     partida: {
         estadio: "Maracana",
@@ -21,7 +22,7 @@ const dados = {
 };
 
 export default class App extends React.Component {
-                
+
     // Utilizando spread operator para passagem dos parametros.
     render() {
         return <PlacarContainer {...dados} />
