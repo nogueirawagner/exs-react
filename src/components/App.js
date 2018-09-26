@@ -1,10 +1,6 @@
 import React from 'react';
 
-import Contador from './Contador';
-import Filme from './Filme';
-import PlacarContainer from './PlacarContainer';
 import FilmesContainer from './FilmesContainer';
-
 
 const dados = {
     partida: {
@@ -21,13 +17,15 @@ const dados = {
     clima: 'Chuva',
     tempo: '92',
     filme: [
-        { id: '4958BE55-8B79-41A8-9EE1-B7E496E02989', nome: 'Rambo', genero: 'Ação'}
+        { id: '00000001-0000-0000-0000-000000000000', nome: 'Rambo', genero: 'Ação', data: '21/08/2018'},
+        { id: '00000002-0000-0000-0000-000000000000', nome: 'Spice', genero: 'Ação', data: '21/08/2018'},
+        { id: '00000003-0000-0000-0000-000000000000', nome: 'Tropa de Elite', genero: 'Ação', data: '21/08/2018'},
+        { id: '00000004-0000-0000-0000-000000000000', nome: 'Fuga das Galinhas', genero: 'Comédia', data: '21/08/2018'},
     ]
 };
 
-export default class App extends React.Component {
 
-    // Utilizando spread operator para passagem dos parametros.
+export default class App extends React.Component {
     render() {
         return <FilmesContainer {...dados} />
     }

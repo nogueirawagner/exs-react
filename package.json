@@ -1,7 +1,7 @@
 {
-  "name": "vvinhas-react-series",
+  "name": "wagner-react-exs",
   "version": "0.0.0",
-  "description": "Provides a basic structure to follow the v++ channel React series.",
+  "description": "",
   "main": "src/app.js",
   "dependencies": {
     "babel-core": "^6.22.1",
@@ -19,6 +19,6 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --history-api-fallback --content-base public"
   },
-  "author": "Vinicius Vinhas",
-  "license": "MIT"
+  "author": "Wagner Nogueira",
+  "license": "WGN"
 }

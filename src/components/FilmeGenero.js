@@ -3,12 +3,13 @@ import React from 'react';
 export default class FilmeGenero extends React.Component {
 
     render() {
-        console.log(this.props.nome);
+        const estilo = { border: "1px solid black" };
         return (
-                <tr>
-                    <th><input type="checkbox"  /></th>
-                    <td>{this.props.nome}</td>
-                    <td>{this.props.genero}</td>
+                <tr >
+                    <td style={estilo}><input type="checkbox"  /></td>
+                    <td style={estilo}>{this.props.nome}</td>
+                    <td style={estilo}>{this.props.genero}</td>
+                    <td style={estilo}>{this.props.data}</td>
                 </tr>
         );
     }
