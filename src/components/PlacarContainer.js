@@ -3,6 +3,7 @@ import React from 'react';
 import Time from './Time';
 import Partida from './Partida';
 import FilmesContainer from './FilmesContainer';
+import BotaoRemover from './BotaoRemover';
 
 export default class PlacarContainer extends React.Component {
 
@@ -30,9 +31,8 @@ export default class PlacarContainer extends React.Component {
     render() {
 
         // Extração de dados 
-        const { partida, casa, visitante } = this.props;
+        const { partida, casa, visitante, filme } = this.props;
         const estilo = { float: "left", "marginRight": "20px" };
-
         return (
             <div>
                 <div style={estilo}>
@@ -57,7 +57,16 @@ export default class PlacarContainer extends React.Component {
                 <div>{this.props.clima}</div>
                 <div>{this.props.tempo}</div>
                 <div style={{ clear: "both" }} ></div>
-                <div style={estilo}> <FilmesContainer /> </div>
+
+                <div style={estilo}>
+                    <FilmesContainer
+                        filmes={filme}
+                    />
+                </div>
+                <div style={estilo}>
+                    <BotaoRemover />
+                </div>
+
             </div>
         );
     }
@@ -68,6 +77,5 @@ PlacarContainer.propTypes = {
 }
 
 PlacarContainer.defaultProps = {
-    clima: 'Ensolarado',
-
+    clima: 'Ensolarado'
 }
