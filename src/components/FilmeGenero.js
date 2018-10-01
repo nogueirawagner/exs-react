@@ -1,16 +1,66 @@
 import React from 'react';
 
-export default class FilmeGenero extends React.Component {
+import BotaoBase from './BotaoBase';
+import ComponentBase from './ComponentBase';
 
+/**
+ * Representação de uma linha da lista de filmes do componente `contaiers\Filmes`
+ */
+export default class FilmeGenero extends ComponentBase {
+
+    /**
+     * Renderização da linha correspondente a um filme por gênero
+     */
     render() {
-        const estilo = { border: "1px solid black" };
+        const {
+            nome,
+            generoId,
+            containerId,
+            id,
+            generos,
+            onCheckChange,
+            onClickAlterar
+        } = this.props;
+
         return (
-                <tr >
-                    <td style={estilo}><input type="checkbox"  /></td>
-                    <td style={estilo}>{this.props.nome}</td>
-                    <td style={estilo}>{this.props.genero}</td>
-                    <td style={estilo}>{this.props.data}</td>
-                </tr>
+            <tr>
+                <td>
+                    <div className="custom-control custom-checkbox">
+                        <input
+                            type="checkbox"
+                            data-id={id}
+                            onChange={() => { 
+                                onCheckChange(this.checkeds({ containerId }).length != 0) 
+                            }} 
+                            className="custom-control-input" 
+                            id={id} 
+                        />
+                        <label
+                            className="custom-control-label"
+                            htmlFor={id}
+                        />
+                    </div>
+                </td>
+                <td>
+                    <label htmlFor={id}>{nome}</label>
+                </td>
+                <td>
+                    <label htmlFor={id}>
+                        {((generos || []).find(gen => gen.id === generoId) || {}).nome}
+                    </label>
+                </td>
+                <td>
+                    <BotaoBase valor="Alterar" enabled={true} action={(e) => {
+                            e.preventDefault();
+                            
+                            this.checkeds({
+                                containerId
+                            }).forEach((check) => check.checked = false);
+                            onClickAlterar(id)
+                        }} 
+                    />
+                </td>
+            </tr>
         );
     }
 }

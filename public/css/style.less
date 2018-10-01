@@ -1,0 +1,58 @@
+.no-padding {
+    padding: 0;
+}
+
+.main {
+    .container {
+        margin-top: 20px;
+
+        .tab-pane {
+            padding: 20px;
+        }    
+        
+        .generos {
+            .table-container {
+                padding: 0;
+                max-height: 470px; 
+                overflow: auto
+            }
+        }
+    
+        .filmes {
+            h3 {
+        
+                & + div {
+                    div:first-child {
+                        margin-top: 15px;
+                    }
+                }
+            }
+    
+            div.movie-name {
+                .no-padding
+            }
+    
+            div.genres {
+                padding-right: 0;
+            }
+    
+            .well {
+                max-height: 470px;
+                overflow: auto; 
+    
+                #tableFilmes {
+                    tbody {
+                        tr td {
+                            vertical-align: inherit;
+    
+                            label {
+                                width: 100%;
+                                margin-bottom: 0;                        
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
